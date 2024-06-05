@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('./models/userSchema');
+const path = require('path');
+
 require('dotenv').config();
 
 const userRoutes = require('./routes/userRoutes');
@@ -20,6 +22,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, '../app/build')));
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '../app/build', 'index.html'));
+  });
 
 // connect to mongodb database:
 const port = process.env.PORT || 3001;

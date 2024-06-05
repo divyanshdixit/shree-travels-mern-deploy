@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm install --legacy-peer-deps && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "ajv": "^7.2.4",
     "dotenv-webpack": "^8.1.0"
   }
 }
